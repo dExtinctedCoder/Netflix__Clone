@@ -2,5 +2,5 @@
 
 A dummy Netflix clone website
 
-##### **work in progress**
+##### **work in progress..**.
 
