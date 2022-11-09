@@ -1,0 +1,80 @@
+@import '../base/variables';
+@import '../utitlities/flex';
+
+.faqs {
+
+  padding: 3rem 0;
+  &>h2 {
+    text-align: center;
+    margin-bottom: 3.125rem;
+  }
+  &>ul {
+    width: min(100% - 0.25rem, 815px);
+    margin: 0 auto;
+    
+    &>li {
+      background-color: $bg_grey;
+      position: relative;
+      width: 100%;
+      margin-bottom: 0.5rem;
+      overflow: hidden;
+      
+      & p {
+        font-size: 1.625rem;
+        padding: 1.3rem 1.95rem;
+      }
+      
+      &>p {
+        &:first-child {
+          @include flex(between);
+          cursor: pointer;
+          
+          & svg {
+            font-weight: 300;
+            font-size: 2.5rem;
+            transition: all 35ms ease;
+          }
+          &+div {
+            border-top: 2px solid $divider;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.faqs__form {
+  
+  & h5 {
+    text-align: center;
+    margin-bottom: 1.25rem;
+  }
+
+  & form div>span {
+    top: 0;
+    transform: translateY(0%);
+    padding: 0.25rem 0;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+}
+
+@media screen and (max-width: 949px) {
+  .faqs {
+    padding: 3rem 0;
+
+    &>ul {
+      width: min(100% - 0.25rem, 815px);
+      margin: 2.125rem auto 0;
+      
+      &>li {
+        & p {
+          padding: 0.9rem 1.35rem;
+          font-size: 1.125rem;
+          text-align: left;
+        }
+      } 
+    }
+  }
+}

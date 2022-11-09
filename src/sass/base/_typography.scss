@@ -1,0 +1,45 @@
+h1, h2 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h3, h4, h5 {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 3.15rem;
+}
+
+h2 {
+  font-size: 3.125rem;
+}
+
+h3 {
+  font-size: 1.625rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
+h6 {
+  font-size: 1.015rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 949px) {
+  h2 {
+    font-size: 1.625rem;
+  }
+  h3 {
+    font-size: 1.125rem;
+  }
+}

@@ -1,0 +1,10 @@
+@use '../abstracts/extends';
+
+button {
+  @extend %btn_base;
+
+  &.big {
+    @extend %btn_big;
+  }
+
+}

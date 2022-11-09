@@ -1,0 +1,76 @@
+@import '../base/variables';
+@import '../utitlities/flex';
+@import '../abstracts/extends';
+
+
+footer {
+  // width: fit-content;
+  @extend %section;
+
+   .footer__control {
+    height: 100%;
+    width: min(100%, 900px);
+    margin: 0 auto;
+    color: $text_grey;
+
+    &>p {
+
+      margin-top: 2.8125rem;
+
+      &:not(.copyright-country) {
+        margin-top: 0;
+        margin-bottom: 2.25rem;
+      }
+    }
+
+    & li, & .copyright-country {
+      font-size: 0.8125rem;
+    }
+
+    &>ul {
+      @include flex(start, row, 1.25rem 0rem);
+      flex-wrap: wrap;
+      
+      & li {
+        flex-basis: 25%;
+
+        &>a {
+          
+          &:hover {
+            text-decoration: underline;
+          }
+          &:visited {
+            color: inherit;
+          }
+        }
+      }
+    }
+   }
+}
+
+@media screen and (max-width: 740px) {
+  .footer__control {
+    text-align: left;
+
+    &>ul {
+      
+      & li {
+        margin: 0;
+        flex-basis: 33% !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .footer__control {
+
+    &>ul {
+      & li {
+        margin: 0;
+        flex-basis: 50% !important;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,107 @@
+@use '../components/form';
+@import '../utitlities/flex';
+@import '../utitlities/grid';
+@import '../base/variables';
+
+.hero__section {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 15% 85%;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+
+  &>.bg__cover {
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    object-position: center;
+    z-index: -2;
+    &>img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &>.bg__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: linear-gradient(180deg, #111, $bg_overlay, rgba(0,0,0,0.5), $bg_overlay, $bg_overlay, #000);
+  }
+  
+  &>div.hero__main-control {
+    @include flex(center, column);
+    width: min(100% - 2rem, calc(450px + 222px));
+    margin: 0 auto;
+    padding-bottom: 2rem;
+
+    &>*>* {
+      margin-inline: auto;
+    }
+    
+    & h2 {
+      padding-top: 1.75rem;
+      max-width: 600px;
+      line-height: 1.1;
+    }
+
+    & h3 {
+      margin-block: 1.5rem;
+    }
+
+    & :where(h5) {
+      // width: max(30ch, 100%);
+      margin-bottom: 2rem;
+      min-width: max-content;
+      padding: 0 1rem;
+    }
+    
+  }
+
+}
+
+.header__control {
+  @include flex(between);
+  width: $container-width-lg;
+  padding: 1rem 0;
+  margin: 0 auto;
+
+  &>* {
+    flex: 1, 0, 0;
+
+    &:first-child {
+      width: 15%;
+    }
+  }
+}
+
+@media screen and (max-width: 948px) {
+  
+  .hero__section {
+    min-height: fit-content;
+    grid-template-rows: 15% 70%;
+
+    & h2 {
+      font-size: 1.75rem;
+    }
+
+    &>div.hero__main-control {
+      padding-top: 5rem;
+      & h5 {
+        font-size: 1.125rem;
+        min-width: fit-content;
+      }
+      
+    }
+
+  }
+  .header__control {
+    &>* {
+      &:first-child {
+        width: 25%;
+      }
+    }
+  }
+}
